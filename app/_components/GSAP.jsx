@@ -21,30 +21,26 @@ export const GSAP = () => {
   const containerRef = useRef(null);
 
   useLayoutEffect(() => {
-    const context = gsap.context(() => {
+    const context = gsap.context( () => {
       const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true
-        }
-      }).to(title1Ref.current, {
-        y: -200
-      }, 0).to(imagesRef.current[1], {
-        y: -150,
-      }, 0).to(imagesRef.current[2], {
-        y: -200,
-      }, 0);
-
-      lettersRef.current.forEach((letterRef, i) => {
-        gsap.to(letterRef, {
-          top: Math.floor(Math.random() * -75) - 25,
-        })
+          scrollTrigger: {
+              trigger: containerRef.current,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+          },
       })
-    });
-
-    return () => context.revert();
+      .to(title1Ref.current, {y: -50}, 0)
+      .to(imagesRef.current[1], {y: -150}, 0)
+      .to(imagesRef.current[2], {y: -255}, 0)
+      lettersRef.current.forEach((letter, i) => {
+          tl.to(letter, {
+              top: Math.floor(Math.random() * -75) - 25,
+          }, 0)
+      })
+      
+  })
+  return () => context.revert();
   }, [])
 
   return (
