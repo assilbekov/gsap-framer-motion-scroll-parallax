@@ -1,4 +1,6 @@
-import styles from "./page.module.css";
+"use client"
+
+import styles from "./page.module.scss";
 import { FramerMotion } from "./_components/FramerMotion";
 import { GSAP } from "./_components/GSAP";
 
