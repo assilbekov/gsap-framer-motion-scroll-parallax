@@ -93,6 +93,10 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    margin: 0px;
+    font-family: 'Regular';
+    margin-top: 100vh;
+    margin-bottom: 100vh;
 }
 
 a {
